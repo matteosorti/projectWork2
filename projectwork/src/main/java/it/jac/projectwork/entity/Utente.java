@@ -26,6 +26,9 @@ public class Utente {
 	
 	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "email")
+	private String email;
 
 }
 
