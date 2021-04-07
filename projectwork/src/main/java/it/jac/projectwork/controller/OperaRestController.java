@@ -23,7 +23,7 @@ public class OperaRestController {
 	OperaService operaService;
 	
 	@GetMapping(path = "/findAll")
-	public Response<?> findAllArtisti() {
+	public Response<?> findAllOpere() {
 		
 		return operaService.findAllOpere();
 		

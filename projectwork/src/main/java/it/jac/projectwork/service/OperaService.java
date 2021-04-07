@@ -134,6 +134,9 @@ public class OperaService {
 				if (opera.getValore() != 0)
 					o.setValore(opera.getValore());	
 				
+				if (opera.getFoto() != null)
+					o.setFoto(opera.getFoto());		
+				
 				
 				this.operaRepository.save(o);
 				

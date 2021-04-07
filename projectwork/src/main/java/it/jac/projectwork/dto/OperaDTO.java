@@ -18,7 +18,7 @@ public class OperaDTO {
 	
 	private String descrizione;
 	
-	private int idArtista;
+	private int idartista;
 	
 	private double valore;
 	

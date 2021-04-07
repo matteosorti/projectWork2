@@ -10,7 +10,7 @@ import lombok.Data;
 
 public class UtenteDTO {
 	
-	private int idopera;
+	private int idutente;
 	
 	private String username;
 	

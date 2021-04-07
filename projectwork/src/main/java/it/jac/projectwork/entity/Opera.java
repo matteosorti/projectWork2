@@ -29,6 +29,9 @@ public class Opera {
 	@Column(name = "descrizione")
 	private String descrizione;
 	
+	@Column(name = "foto")
+	private String foto;
+	
 	@Column(name = "idartista")
 	private int idartista;
 	

@@ -143,6 +143,13 @@ public class UtenteService {
 			return response;
 		}
 		
+		
+		//login
+		public Response<UtenteDTO> login(String username, String password) {
+			Response<UtenteDTO> response = new Response<UtenteDTO>();
+			return null;
+			
+		}
 
 
 }

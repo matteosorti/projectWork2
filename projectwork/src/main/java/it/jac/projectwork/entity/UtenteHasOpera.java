@@ -25,4 +25,7 @@ public class UtenteHasOpera {
 	
 	@Column(name = "id_opera")
 	private int id_opera;
+	
+	@Column(name = "valore")
+	private int valore;
 }
