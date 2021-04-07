@@ -30,8 +30,8 @@ public class Opera {
 	private String descrizione;
 	
 	@Column(name = "idartista")
-	private String idartista;
+	private int idartista;
 	
 	@Column(name = "valore")
-	private String valore;
+	private double valore;
 }

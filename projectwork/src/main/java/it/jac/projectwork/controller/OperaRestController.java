@@ -1,4 +1,5 @@
 package it.jac.projectwork.controller;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,48 +10,48 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.jac.projectwork.dto.Response;
-import it.jac.projectwork.entity.Artista;
-import it.jac.projectwork.service.ArtistaService;
+import it.jac.projectwork.entity.Opera;
+import it.jac.projectwork.service.OperaService;
 
 @RestController
-@RequestMapping("/rest/artista")
-public class ArtistaRestController {
+@RequestMapping("/rest/opera")
+public class OperaRestController {
 	
-	private static Logger log = LoggerFactory.getLogger(ArtistaRestController.class);
+	private static Logger log = LoggerFactory.getLogger(OperaRestController.class);
 	
 	@Autowired
-	ArtistaService artistaService;
+	OperaService operaService;
 	
 	@GetMapping(path = "/findAll")
 	public Response<?> findAllArtisti() {
 		
-		return artistaService.findAllArtisti();
+		return operaService.findAllOpere();
 		
 	}
 	
 	@GetMapping(path = "/findAllById")
-	public Response<?> findArtistaById(@RequestBody int id) {
+	public Response<?> findAllOpereById(@RequestBody int id) {
 		
-		return artistaService.findArtistaById(id);
+		return operaService.findOperaById(id);
 		
 	}
 	
 	@PostMapping(path ="/create")
-	public Response<?> createArtista(@RequestBody Artista artista) {
+	public Response<?> createOpera(@RequestBody Opera opera) {
 		
-		return artistaService.createArtista(artista);
+		return operaService.createOpera(opera);
 	}
 	
 	@PostMapping(path ="/delete")
-	public Response<?> deleteArtista(@RequestBody int id){
+	public Response<?> deleteOpera(@RequestBody int id){
 		
-		return artistaService.deleteArtistaById(id);
+		return operaService.deleteOperaById(id);
 	}
 	
 	@PostMapping(path ="/update")
-	public Response<?> updateArtista(@RequestBody Artista artista){
+	public Response<?> updateOpera(@RequestBody Opera opera){
 		
-		return artistaService.updateArtista(artista);
+		return operaService.updateOpera(opera);
 	
 	}
 

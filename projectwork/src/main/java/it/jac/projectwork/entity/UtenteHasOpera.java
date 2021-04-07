@@ -16,10 +16,13 @@ import lombok.Data;
 @Data
 public class UtenteHasOpera {
 	@Id
+	@Column(name = "id")
+	private int id;
+	
 	@Column(name = "id_utente")
-	private String id_utente;
+	private int id_utente;
 	
 	
 	@Column(name = "id_opera")
-	private String id_opera;
+	private int id_opera;
 }
