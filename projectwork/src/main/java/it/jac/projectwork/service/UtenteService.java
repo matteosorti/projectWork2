@@ -156,6 +156,7 @@ public class UtenteService {
 			}catch(Exception e) {
 				response.setError(error);
 			}
+			System.out.println(response);
 			return response;
 		}
 

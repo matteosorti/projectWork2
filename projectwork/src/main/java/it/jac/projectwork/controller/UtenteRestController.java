@@ -73,7 +73,11 @@ public class UtenteRestController {
 		
 		username=body.substring(array[2]+1,array[3]);
 		password=body.substring(array[6]+1,array[7]);
+		
+		log.info(username);
+		log.info(password);
 		return utenteService.login(username, password);
+		
 	
 	}
 

@@ -18,6 +18,8 @@ public class OperaDTO {
 	
 	private String descrizione;
 	
+	private String foto;
+	
 	private int idartista;
 	
 	private double valore;
