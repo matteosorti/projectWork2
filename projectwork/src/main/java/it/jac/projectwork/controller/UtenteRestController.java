@@ -54,6 +54,28 @@ public class UtenteRestController {
 		return utenteService.updateUtente(utente);
 	
 	}
+	
+	@PostMapping(path ="/login")
+	public Response<?> login(@RequestBody String body){
+		log.info("body =" + body);
+		
+		String username= null;
+		String password= null;
+		
+		int[] array= new int[9];
+		int conta=0;
+		for(int i=0; i<body.length(); i++) {
+			if(body.charAt(i)=='"') {
+				array[conta]=i;
+				conta++;
+			}
+		}
+		
+		username=body.substring(array[2]+1,array[3]);
+		password=body.substring(array[6]+1,array[7]);
+		return utenteService.login(username, password);
+	
+	}
 
 }
 

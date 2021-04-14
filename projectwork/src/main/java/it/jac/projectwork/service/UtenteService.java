@@ -147,8 +147,16 @@ public class UtenteService {
 		//login
 		public Response<UtenteDTO> login(String username, String password) {
 			Response<UtenteDTO> response = new Response<UtenteDTO>();
-			return null;
-			
+			try {
+				Utente user = this.utenteRepository.findByUsername(username);
+				if(user.getPassword().equals(password)) {
+					response.setResult(UtenteDTO.build(user));
+					response.setResultTest(true);
+				}
+			}catch(Exception e) {
+				response.setError(error);
+			}
+			return response;
 		}
 
 

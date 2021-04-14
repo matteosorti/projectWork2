@@ -7,5 +7,5 @@ import it.jac.projectwork.entity.Utente;
 
 @Repository
 public interface UtenteRepository extends CrudRepository<Utente, Integer>{
-
+	public Utente findByUsername(String username);
 }
