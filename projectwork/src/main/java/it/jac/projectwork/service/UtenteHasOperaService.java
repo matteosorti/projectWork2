@@ -113,7 +113,7 @@ public class UtenteHasOperaService {
 		}
 
 		//update opera
-		public Response<UtenteHasOperaDTO> updateOpera(UtenteHasOpera utenteHasOpera) {
+		public Response<UtenteHasOperaDTO> updateUtenteHasOpera(UtenteHasOpera utenteHasOpera) {
 
 			Response<UtenteHasOperaDTO> response = new Response<UtenteHasOperaDTO>();
 			try {
