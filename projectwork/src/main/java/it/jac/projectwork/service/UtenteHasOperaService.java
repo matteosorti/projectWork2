@@ -117,6 +117,7 @@ public class UtenteHasOperaService {
 
 			Response<UtenteHasOperaDTO> response = new Response<UtenteHasOperaDTO>();
 			try {
+				System.out.println("l'id essere tipo: "+ utenteHasOpera.getId());
 				UtenteHasOpera h = this.utenteHasOperaRepository.findById(utenteHasOpera.getId()).get();
 
 				if (utenteHasOpera.getId_utente() != 0)
