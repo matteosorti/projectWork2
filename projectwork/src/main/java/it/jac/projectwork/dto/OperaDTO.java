@@ -1,5 +1,9 @@
 package it.jac.projectwork.dto;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+
 import org.springframework.beans.BeanUtils;
 
 import it.jac.projectwork.entity.Opera;
@@ -23,6 +27,12 @@ public class OperaDTO {
 	private int idartista;
 	
 	private double valore;
+	
+	private Date creazione;
+	
+	private Date scadenza;
+	
+	private boolean scaduto;
 	
 	public static OperaDTO build(Opera opera) {
 

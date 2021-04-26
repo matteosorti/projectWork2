@@ -1,5 +1,7 @@
 package it.jac.projectwork.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,4 +39,13 @@ public class Opera {
 	
 	@Column(name = "valore")
 	private double valore;
+	
+	@Column(name = "creazione")
+	private Date creazione;
+	
+	@Column(name = "scadenza")
+	private Date scadenza;
+	
+	@Column(name = "scaduto")
+	private boolean scaduto;
 }

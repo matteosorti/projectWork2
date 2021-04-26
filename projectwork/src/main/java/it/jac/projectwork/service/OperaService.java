@@ -1,6 +1,8 @@
 package it.jac.projectwork.service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -73,6 +75,7 @@ public class OperaService {
 				while (iterator.hasNext()) {
 
 					Opera opera = iterator.next();
+					checkScadenza(opera);
 					result.add(OperaDTO.build(opera));
 
 				}
@@ -86,8 +89,21 @@ public class OperaService {
 
 			}
 
+			System.out.println(response);
 			return response;
 
+		}
+		
+		public void checkScadenza(Opera opera) {
+			System.out.println("/n/nsono nel metodo");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			Date d = new Date();
+			System.out.println(opera.getScadenza());
+			System.out.println(d.getDate());
+			if(d.compareTo(opera.getScadenza())>=0) {
+				System.out.println("/n/nsono nel if");
+				opera.setScaduto(true);
+			}
 		}
 
 		//find opera by id
