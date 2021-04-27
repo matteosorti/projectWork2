@@ -145,8 +145,5 @@ public class UtenteHasOperaService {
 
 			return response;
 		}
-		
-
-
 }
 
