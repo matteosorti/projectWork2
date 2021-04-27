@@ -51,9 +51,8 @@ public class UtenteHasOperaRestController {
 	
 	@PostMapping(path ="/update")
 	public Response<?> updateUtenteHasOpera(@RequestBody UtenteHasOpera utenteHasOpera){
-		
+		System.out.println(utenteHasOpera);
 		return utenteHasOperaService.updateUtenteHasOpera(utenteHasOpera);
 	
 	}
-
 }

@@ -119,13 +119,18 @@ public class UtenteHasOperaService {
 			try {
 				System.out.println("l'id essere tipo: "+ utenteHasOpera.getId());
 				UtenteHasOpera h = this.utenteHasOperaRepository.findById(utenteHasOpera.getId()).get();
-
-				if (utenteHasOpera.getId_utente() != 0)
-					h.setId_utente(utenteHasOpera.getId_utente());
+					
 				
-				if (utenteHasOpera.getId_opera() != 0)
-					h.setId_opera(utenteHasOpera.getId_opera());
+					
 				
+					if(h.getValore()<utenteHasOpera.getValore()) {
+						h.setIdutente(utenteHasOpera.getIdutente());
+						h.setIdopera(utenteHasOpera.getIdopera());
+						h.setValore(utenteHasOpera.getValore());
+					}else {
+						response.setError("Offerta bassa");
+					}
+					
 				
 				this.utenteHasOperaRepository.save(h);
 				

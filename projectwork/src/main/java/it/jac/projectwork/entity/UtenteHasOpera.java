@@ -20,11 +20,11 @@ public class UtenteHasOpera {
 	private int id;
 	
 	@Column(name = "id_utente")
-	private int id_utente;
+	private int idutente;
 	
 	
 	@Column(name = "id_opera")
-	private int id_opera;
+	private int idopera;
 	
 	@Column(name = "valore")
 	private int valore;

@@ -1,5 +1,7 @@
 package it.jac.projectwork.dto;
 
+import javax.persistence.Column;
+
 import org.springframework.beans.BeanUtils;
 
 import it.jac.projectwork.entity.UtenteHasOpera;
@@ -12,9 +14,11 @@ public class UtenteHasOperaDTO {
 	
 	private int id;
 	
-	private int id_artista;
+	private int idutente;
 	
-	private int id_opera;
+	private int idopera;
+	
+	private int valore;
 	
 	public static UtenteHasOperaDTO build(UtenteHasOpera utenteHasOpera) {
 
