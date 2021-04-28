@@ -6,9 +6,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mysql.cj.log.Log;
+
+import it.jac.projectwork.controller.UtenteRestController;
 import it.jac.projectwork.dao.OperaRepository;
 import it.jac.projectwork.dto.OperaDTO;
 import it.jac.projectwork.dto.Response;
@@ -21,6 +26,7 @@ public class OperaService {
 	OperaRepository operaRepository;
 	
 	final static String error = "Nessun opera trovata.";
+	private static Logger log = LoggerFactory.getLogger(OperaService.class);
 	
 	// create
 	
@@ -63,19 +69,22 @@ public class OperaService {
 
 		// findAll
 		public Response<List<OperaDTO>> findAllOpere() {
+			log.info("primo passagio find all");
 
 			Response<List<OperaDTO>> response = new Response<List<OperaDTO>>();
 
 			List<OperaDTO> result = new ArrayList<>();
 
 			try {
+				log.info(" passagio try");
 
 				Iterator<Opera> iterator = this.operaRepository.findAll().iterator();
 
 				while (iterator.hasNext()) {
+					log.info("passaggio while");
 
 					Opera opera = iterator.next();
-					checkScadenza(opera);
+					this.checkScadenza(opera);
 					result.add(OperaDTO.build(opera));
 
 				}
@@ -89,20 +98,20 @@ public class OperaService {
 
 			}
 
-			System.out.println(response);
+			System.out.println(response.getResult().get(2));
 			return response;
 
 		}
 		
 		public void checkScadenza(Opera opera) {
-			System.out.println("/n/nsono nel metodo");
+			System.out.println("\nsono nel metodo");
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = new Date();
-			System.out.println(opera.getScadenza());
-			System.out.println(d.getDate());
+
 			if(d.compareTo(opera.getScadenza())>=0) {
-				System.out.println("/n/nsono nel if");
-				opera.setScaduto(true);
+				System.out.println("\nsono nel if");
+				opera.setScaduto(1);
+				this.updateOpera(opera);
 			}
 		}
 

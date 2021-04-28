@@ -47,5 +47,5 @@ public class Opera {
 	private Date scadenza;
 	
 	@Column(name = "scaduto")
-	private boolean scaduto;
+	private int scaduto;
 }

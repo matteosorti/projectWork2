@@ -32,7 +32,7 @@ public class OperaDTO {
 	
 	private Date scadenza;
 	
-	private boolean scaduto;
+	private int scaduto;
 	
 	public static OperaDTO build(Opera opera) {
 
